@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OTP - Verify</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/fonts.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/style.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/media.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/media.css">
+
+    <!-- SLICK -->
+
+    <!-- CUSTOM CSS -->
+
+</head>
+
+<body>
+    <main>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="login-bg white-2 d-flex align-items-center">
+                    <div class="login-imgs w-100">
+                        <!-- <div class="logo d-flex justify-content-center mb-lg-5 mb-sm-2">
+                            <img src="/public/img/logo.svg" alt="">
+                        </div> -->
+                        <div class="login-group d-flex justify-content-center">
+                            <img src="/public/img/Enter OTP-bro.png" class="w-50" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="login-content position-relative">
+                    <div class="top-bar position-absolute d-flex justify-content-end">
+                        <div class="language align-items-center d-flex">
+                            <span>EN</span>
+                        </div>
+                        <span><a href="/register">REGISTER</a></span>
+                        <span><a href="/">LOGIN</a></span>
+                    </div>
+                    <div class="d-flex align-items-center h-100">
+                        <form action="/otpdata" method="post" class="w-100">
+                            <div class="middle-bar">
+                                <h2 class="d-flex justify-content-center">OTP</h2>
+                                <div class="para d-flex justify-content-center align-items-center">
+                                    <p class="text-color f-14-18-400 d-flex justify-content-center w-75 text-center">
+                                        Please enter the OTP that we've sent to your email</p>
+                                </div>
+
+                                <div class="otp-field mb-4">
+                                    <input type="number" class="otp-num" name="otp1" />
+                                    <input type="number" class="otp-num" name="otp2"/>
+                                    <input type="number" class="otp-num" name="otp3"/>
+                                    <input type="number" class="otp-num" name="otp4"/>
+                                    <input type="number" class="otp-num" name="otp5"/>
+                                    <input type="number" class="otp-num" name="otp6"/>
+                                </div>
+
+
+                                <div class="continue btn d-flex justify-content-center mt-4">
+                                    <button class="otp-verify"><a class="verify-a">Verify</a></button>
+                                </div>
+
+                                <div class="resend text-center mt-4">
+                                    <p>Haven't received the code in your mail? <a href="#">Resend it</a></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/public/js/jquery-3.7.0.min.js"></script>
+    <script src="/public/js/script.js"></script>
+</body>
+
+</html>

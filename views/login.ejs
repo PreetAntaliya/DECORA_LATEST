@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/fonts.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/style.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/media.css">
+
+    <!-- SLICK -->
+
+    <!-- CUSTOM CSS -->
+
+</head>
+
+<body>
+    <main>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="login-bg white-2 d-flex align-items-center">
+                    <div class="login-imgs w-100">
+                        <!-- <div class="logo d-flex justify-content-center mb-lg-5 mb-sm-2">
+                            <img src="/public/img/logo.svg" alt="">
+                        </div> -->
+                        <div class="login-group d-flex justify-content-center">
+                            <img src="/public/img/Mobile login-rafiki.png" class="w-50" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="login-content position-relative">
+                    <div class="top-bar position-absolute d-flex justify-content-end">
+                        <div class="language align-items-center d-flex">
+                            <span>EN</span>
+                        </div>
+                        <span><a href="/register">REGISTER</a></span>
+                        <span><a href="/">LOGIN</a></span>
+                    </div>
+                    <div class="d-flex align-items-center h-100">
+                        <div class="middle-bar">
+                            <h2 class="d-flex justify-content-center">Sign In to Account</h2>
+                            <div class="para d-flex justify-content-center align-items-center">
+                                <p class="text-color f-14-18-400 d-flex justify-content-center w-75 text-center">Use
+                                    your email and password to access your account</p>
+                            </div>
+                            <form action="/logindata" method="post">
+                                <div class="get-email d-flex justify-content-center">
+                                    <input type="email" name="email" class="d-block" id="login-email"
+                                        placeholder="Enter Email Address">
+                                </div>
+                                <div
+                                    class="get-password position-relative d-flex justify-content-center align-items-center">
+                                    <input type="password" name="password" class="d-block" id="login-password"
+                                        placeholder="Enter Password">
+                                    <div class="eye position-absolute" onclick="showPassword('login-password','pass')">
+                                        <img src="/public/img/Eye.svg" alt="Show Password" id="pass">
+                                    </div>
+                                </div>
+                                <div class="forgot-password d-flex justify-content-end">
+                                    <a href="/forgetpassword">Forgot your password?</a>
+                                </div>
+                                <div class="continue btn d-flex justify-content-center mt-5">
+                                    <button class="submit"><a>Continue</a></button>
+                                </div>
+                            </form>
+                            <div class="create-acc my-4">
+                                <div class="d-flex justify-content-center">
+                                    <p class="text-2 mb-2">Didn’t have an account?</p>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="/register">Create New Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/public/js/jquery-3.7.0.min.js"></script>
+    <script src="/public/js/script.js"></script>
+</body>
+
+</html>

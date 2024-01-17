@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OTP - Verify</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/fonts.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/style.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/media.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/media.css">
+    <!-- SLICK -->
+
+    <!-- CUSTOM CSS -->
+
+</head>
+
+<body>
+    <main>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="login-bg white-2 d-flex align-items-center">
+                    <div class="login-imgs w-100">
+                        <!-- <div class="logo d-flex justify-content-center mb-lg-5 mb-sm-2">
+                            <img src="/public/img/logo.svg" alt="">
+                        </div> -->
+                        <div class="login-group d-flex justify-content-center">
+                            <img src="/public/img/Enter OTP-bro.png" class="w-50" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="login-content position-relative">
+                    <div class="top-bar position-absolute d-flex justify-content-end">
+                        <div class="language align-items-center d-flex">
+                            <span>EN</span>
+                        </div>
+                        <span><a href="/register">REGISTER</a></span>
+                        <span><a href="/">LOGIN</a></span>
+                    </div>
+                    <div class="d-flex align-items-center h-100">
+                        <form action="userRegister" method="post" class="w-100">
+                            <div class="middle-bar">
+                                <h2 class="d-flex justify-content-center">Email Address</h2>
+
+                                <h2 class="d-flex justify-content-center">OTP</h2>
+
+                                <div class="para d-flex justify-content-center align-items-center">
+                                    <p class="text-color f-14-18-400 d-flex justify-content-center w-75 text-center">
+                                        Please enter the OTP that we've sent to your email</p>
+                                </div>
+
+                                <div class="otp-field mb-4">
+                                    <input type="number" name="otpcode1" class="otp-num" />
+                                    <input type="number" name="otpcode2" class="otp-num" disabled/>
+                                    <input type="number" name="otpcode3" class="otp-num" disabled/>
+                                    <input type="number" name="otpcode4" class="otp-num" disabled/>
+                                    <input type="number" name="otpcode5" class="otp-num" disabled/>
+                                    <input type="number" name="otpcode6" class="otp-num" disabled/>
+                                </div>
+
+
+                                <div class="continue btn d-flex justify-content-center mt-4">
+                                    <button class="otp-verify" type="submit"><a class="verify-a">Verify</a></button>
+                                </div>
+
+                                <!-- <div class="resend text-center mt-4">
+                                    <p>Haven't received the code in your mail? <a href="#">Resend it</a></p>
+                                </div> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/public/js/jquery-3.7.0.min.js"></script>
+    <script src="/public/js/script.js"></script>
+    <script>
+        const inputs = document.querySelectorAll(".otp-num");
+        const button = document.querySelector(".otp-verify");
+        const a_tag = document.querySelector(".verify-a");
+
+
+
+
+        window.addEventListener("load", () => inputs[0].focus());
+        button.setAttribute("disabled", "disabled");
+
+        inputs[0].addEventListener("paste", function (event) {
+            event.preventDefault();
+
+            const pastedValue = (event.clipboardData || window.clipboardData).getData(
+                "text"
+            );
+            const otpLength = inputs.length;
+
+            for (let i = 0; i < otpLength; i++) {
+                if (i < pastedValue.length) {
+                    inputs[i].value = pastedValue[i];
+                    inputs[i].removeAttribute("disabled");
+                    inputs[i].focus;
+                } else {
+                    inputs[i].value = ""; // Clear any remaining inputs
+                    inputs[i].focus;
+                }
+            }
+        });
+
+        inputs.forEach((input, index1) => {
+            input.addEventListener("keyup", (e) => {
+                const currentInput = input;
+                const nextInput = input.nextElementSibling;
+                const prevInput = input.previousElementSibling;
+
+                if (currentInput.value.length > 1) {
+                    currentInput.value = "";
+                    return;
+                }
+
+                if (
+                    nextInput &&
+                    nextInput.hasAttribute("disabled") &&
+                    currentInput.value !== ""
+                ) {
+                    nextInput.removeAttribute("disabled");
+                    nextInput.focus();
+                }
+
+                if (e.key === "Backspace") {
+                    inputs.forEach((input, index2) => {
+                        if (index1 <= index2 && prevInput) {
+                            input.setAttribute("disabled", true);
+                            input.value = "";
+                            prevInput.focus();
+                        }
+                    });
+                }
+
+                button.classList.remove("otp-acttive");
+                button.setAttribute("disabled", "disabled");
+
+                const inputsNo = inputs.length;
+                if (!inputs[inputsNo - 1].disabled && inputs[inputsNo - 1].value !== "") {
+                    button.classList.add("otp-acttive");
+                    button.removeAttribute("disabled");
+                    a_tag.setAttribute("href", "index.html");
+
+                    return;
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

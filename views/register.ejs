@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CTX - Register</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    </link>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/public/css/fonts.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/style.css">
+    </link>
+    <link rel="stylesheet" href="/public/css/media.css">
+
+</head>
+
+<body>
+    <main>
+        <div class="row">
+            <div class="col-lg-6 order-lg-1 col-sm-12 order-2">
+                <div class="login-content position-relative">
+                    <div class="d-flex align-items-center h-100">
+                        <form action="/registerdata" class="w-100" method="post">
+                            <div class="register">
+                                <h2 class="d-flex justify-content-center text-center">Register with Ctiex Global</h2>
+                                <div class="para d-flex justify-content-center align-items-center">
+                                    <p class="text-color f-14-18-400 d-flex justify-content-center w-75 text-center">
+                                        Sign Up
+                                        to unlock exciting experience with our services.</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" name="fname" id="fname" placeholder="Enter First Name"
+                                            required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="lname" id="lname" placeholder="Enter Last Name"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="password position-relative col-sm-6 d-flex align-items-center">
+                                        <input type="password" name="password" id="password"
+                                            placeholder="Enter Password" required>
+                                        <div class="eye position-absolute" onclick="showPassword('password','pass')">
+                                            <img src="/public/img/Eye.svg" id="pass" alt="showPassword">
+                                        </div>
+                                    </div>
+                                    <div class="password position-relative col-sm-6 d-flex align-items-center">
+                                        <input type="password" name="cpassword" id="re-password"
+                                            placeholder="Re-Enter Password" required>
+                                        <div class="eye position-absolute"
+                                            onclick="showPassword('re-password','re-pass')">
+                                            <img src="/public/img/Eye.svg" id="re-pass" alt="showPassword">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+
+                                        <select name="gender" id="gender" required>
+                                            <option value="" class="text-color" selected disabled>Select a Gender
+                                            </option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="tel" name="contact" id="contact" placeholder="Contact Number"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-sm-6">
+                                        <input type="email" name="email" id="email" placeholder="Enter Email Address"
+                                            required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="address" id="address" placeholder="Enter Address"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" name="state" id="state" placeholder="State" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="zipcode" id="zipcode" placeholder="Zip Code" required>
+                                    </div>
+                                </div>
+                                <div class="agree d-flex align-items-center">
+                                    <input type="checkbox" name="agree" id="agree" class="m-0" required>
+                                    <label for="agree" class="m-0">I have read and agree to the <a href="#">Clients
+                                            Agreement</a></label>
+                                </div>
+                                <div class="continue btn d-flex justify-content-center mt-5">
+                                    <button type="submit" class="register-btn">Continue</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-2 col-sm-12 order-1  position-relative">
+                <div class="top-bar position-absolute d-flex justify-content-end">
+                    <div class="language align-items-center d-flex">
+
+                        <span>EN</span>
+                    </div>
+                    <span><a href="/register">REGISTER</a></span>
+                    <span><a href="/">LOGIN</a></span>
+                </div>
+                <div class="login-bg white-2 d-flex align-items-center">
+                    <div class="login-imgs w-100">
+                        <!-- <div class="logo register-logo d-flex justify-content-center mb-md-5 my-sm-5">
+                            <img src="/public/img/logo.svg" alt="">
+                        </div> -->
+                        <div class="login-group d-flex justify-content-center">
+                            <img src="/public/img/Secure login-amico.png" class="w-50" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="/public/js/jquery-3.7.0.min.js"></script>
+    <script src="/public/js/script.js"></script>
+    <script>
+            const agree = document.querySelector("#agree");
+            const submit = document.querySelector(".register-btn"); ''
+            submit.setAttribute('disabled', true);
+            submit.classList.remove("otp-acttive");
+
+            agree.addEventListener('change', function () {
+                // submit.disabled = !this.checkValidity();
+                // submit.classList.add("otp-acttive");
+                if (this.checked) {
+                    submit.removeAttribute('disabled');
+                    submit.classList.add("otp-acttive");
+                } else {
+                    submit.setAttribute('disabled', true);
+                    submit.classList.remove("otp-acttive");
+                }
+            });
+
+    </script>
+</body>
+
+</html>
